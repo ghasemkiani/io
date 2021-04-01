@@ -1,0 +1,26 @@
+{
+  "name": "@ghasemkiani/io",
+  "version": "1.0.0",
+  "description": "IO utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghasemkiani/io.git"
+  },
+  "keywords": [
+    "io",
+    "file-system"
+  ],
+  "author": "Ghasem Kiani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ghasemkiani/io/issues"
+  },
+  "homepage": "https://github.com/ghasemkiani/io#readme",
+  "dependencies": {
+    "@ghasemkiani/base": "github:ghasemkiani/base"
+  }
+}
