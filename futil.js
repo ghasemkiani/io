@@ -27,10 +27,12 @@ class FUtil extends Base {
 			let ff = fs.readdirSync(dir, {withFileTypes: true});
 			for(let f of ff) {
 				let p = path.join(dir, f.name);
-				if(f.isFile()) {
+				if(f.isFile() || f.isSymbolicLink()) {
 					fs.unlinkSync(p);
 				} else if(f.isDirectory()) {
 					await this.toDelDir(p);
+				} else {
+					// ?
 				}
 			}
 			fs.rmdirSync(dir);
