@@ -1,21 +1,20 @@
 //	@ghasemkiani/base/io/futil
 
-const path = require("path");
-const fs = require("fs");
-const fsPromises = fs.promises;
+import path from "path";
+import fs from "fs";
 
-const {Obj: Base} = require("@ghasemkiani/base/obj");
+import {Obj} from "@ghasemkiani/base";
 
-class FUtil extends Base {
+class FUtil extends Obj {
 	async toCopyDir(dir1, dir2) {
 		if(fs.existsSync(dir1)) {
-			await fsPromises.mkdir(dir2, {recursive: true});
-			let ff = await fsPromises.readdir(dir1, {withFileTypes: true});
+			await fs.promises.mkdir(dir2, {recursive: true});
+			let ff = await fs.promises.readdir(dir1, {withFileTypes: true});
 			for(let f of ff) {
 				let p1 = path.join(dir1, f.name);
 				let p2 = path.join(dir2, f.name);
 				if(f.isFile()) {
-					await fsPromises.copyFile(p1, p2);
+					await fs.promises.copyFile(p1, p2);
 				} else if(f.isDirectory()) {
 					await this.toCopyDir(p1, p2);
 				}
@@ -42,7 +41,4 @@ class FUtil extends Base {
 
 let futil = new FUtil();
 
-module.exports = {
-	FUtil,
-	futil,
-};
+export {FUtil, futil};

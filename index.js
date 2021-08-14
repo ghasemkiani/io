@@ -1,9 +1,9 @@
 //	@ghasemkiani/io/index
 
-const futil = require("@ghasemkiani/io/futil");
-const inputter = require("@ghasemkiani/io/inputter");
+import {Inputter} from "./inputter.js";
+import {FUtil, futil} from "./futil.js";
 
-module.exports = {
-	futil,
-	inputter,
+export {
+	Inputter,
+	FUtil, futil,
 };

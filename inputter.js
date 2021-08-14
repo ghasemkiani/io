@@ -1,9 +1,10 @@
 //	@ghasemkiani/io/inputter
 
-const {Obj: Base} = require("@ghasemkiani/base/obj");
-const readline = require("readline");
+import readline from "readline";
 
-class Inputter extends Base {
+import {Obj} from "@ghasemkiani/base";
+
+class Inputter extends Obj {
 	// _rl
 
 	get rl() {
@@ -62,6 +63,4 @@ class Inputter extends Base {
 	}
 }
 
-module.exports = {
-	Inputter,
-};
+export {Inputter};
