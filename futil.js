@@ -1,4 +1,4 @@
-//	@ghasemkiani/base/io/futil
+//	@ghasemkiani/io/futil
 
 import path from "path";
 import fs from "fs";
@@ -36,6 +36,12 @@ class FUtil extends Obj {
 			}
 			fs.rmdirSync(dir);
 		}
+	}
+	renameWithoutChangingLastModifiedDate(path1, path2) {
+		let {atime, mtime} = fs.statSync(path1, {});
+		atime = new Date();
+		fs.renameSync(path1, path2);
+		fs.utimesSync(path2, atime, mtime);
 	}
 }
 
