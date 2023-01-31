@@ -61,6 +61,21 @@ class Inputter extends Obj {
 			}
 		});
 	}
+	static async toInput(prompt) {
+		let inputter = new Inputter();
+		let line = await inputter.toReadLine(prompt + " ");
+		inputter.close();
+		return line;
+	}
+	static async toConfirm(prompt) {
+		let line = await this.toInput(prompt);
+		return /^\s*y/i.test(line);
+	}
+	static async toDoConfirm(prompt, message) {
+		if (!(await this.toConfirm(prompt))) {
+			throw new Error(message);
+		}
+	}
 }
 
 export {Inputter};
