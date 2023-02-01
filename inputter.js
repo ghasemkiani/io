@@ -71,7 +71,7 @@ class Inputter extends Obj {
 		let line = await this.toInput(prompt);
 		return /^\s*y/i.test(line);
 	}
-	static async toDoConfirm(prompt, message) {
+	static async toConfirmOrThrow(prompt, message) {
 		if (!(await this.toConfirm(prompt))) {
 			throw new Error(message);
 		}
