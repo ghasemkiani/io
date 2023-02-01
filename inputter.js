@@ -40,7 +40,7 @@ class Inputter extends Obj {
 			}
 		});
 	}
-	async toReadLineTimeout(ms, prompt) {
+	async toReadLineTimeout(ms, prompt, defaultAnswer = null) {
 		return new Promise((resolve, reject) => {
 			try {
 				let rl = readline.createInterface({
@@ -49,7 +49,7 @@ class Inputter extends Obj {
 				});
 				let handle = setTimeout(() => {
 					rl.close();
-					resolve(null);
+					resolve(defaultAnswer);
 				}, ms);
 				rl.question(cutil.asString(prompt), answer => {
 					clearTimeout(handle);
