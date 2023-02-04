@@ -67,6 +67,12 @@ class Inputter extends Obj {
 		inputter.close();
 		return line;
 	}
+	static async toInputTimeout(ms, prompt, defaultAnswer = null) {
+		let inputter = new Inputter();
+		let line = await inputter.toReadLineTimeout(ms, prompt + " ", defaultAnswer);
+		inputter.close();
+		return line;
+	}
 	static async toConfirm(prompt) {
 		let line = await this.toInput(prompt);
 		return /^\s*y/i.test(line);
