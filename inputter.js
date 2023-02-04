@@ -2,6 +2,7 @@
 
 import readline from "readline";
 
+import {cutil} from "@ghasemkiani/base";
 import {Obj} from "@ghasemkiani/base";
 
 class Inputter extends Obj {
@@ -63,13 +64,13 @@ class Inputter extends Obj {
 	}
 	static async toInput(prompt) {
 		let inputter = new Inputter();
-		let line = await inputter.toReadLine(prompt + " ");
+		let line = await inputter.toReadLine(!prompt ? "" : prompt + " ");
 		inputter.close();
 		return line;
 	}
 	static async toInputTimeout(ms, prompt, defaultAnswer = null) {
 		let inputter = new Inputter();
-		let line = await inputter.toReadLineTimeout(ms, prompt + " ", defaultAnswer);
+		let line = await inputter.toReadLineTimeout(ms, !prompt ? "" : prompt + " ", defaultAnswer);
 		inputter.close();
 		return line;
 	}
