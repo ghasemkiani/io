@@ -1,6 +1,4 @@
-//	@ghasemkiani/io/inputter
-
-import readline from "readline";
+import readline from "node:readline";
 
 import {cutil} from "@ghasemkiani/base";
 import {Obj} from "@ghasemkiani/base";
@@ -78,7 +76,7 @@ class Inputter extends Obj {
 		let line = await this.toInput(prompt);
 		return /^\s*y/i.test(line);
 	}
-	static async toConfirmOrThrow(prompt, message) {
+	static async toConfirmOrThrow(prompt, message = "Aborted by user") {
 		if (!(await this.toConfirm(prompt))) {
 			throw new Error(message);
 		}

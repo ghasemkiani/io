@@ -1,7 +1,5 @@
-//	@ghasemkiani/io/futil
-
-import path from "path";
-import fs from "fs";
+import path from "node:path";
+import fs from "node:fs";
 
 import {Obj} from "@ghasemkiani/base";
 
