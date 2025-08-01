@@ -1,34 +1,34 @@
 {
-	"name": "@ghasemkiani/io",
-	"version": "2.1.7",
-	"description": "IO utilities",
-	"type": "module",
-	"main": "index.js",
-	"scripts": {
-		"test": "node --test",
-		"format": "prettier --write .",
-		"lint": "eslint .",
-		"lint:fix": "eslint --fix ."
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/ghasemkiani/io.git"
-	},
-	"keywords": [
-		"io",
-		"file-system"
-	],
-	"author": "Ghasem Kiani",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/ghasemkiani/io/issues"
-	},
-	"homepage": "https://github.com/ghasemkiani/io#readme",
-	"dependencies": {
-		"@ghasemkiani/base": "github:ghasemkiani/base"
-	},
-	"devDependencies": {
-		"eslint": "^9.9.1",
-		"prettier": "^3.3.3"
-	}
+  "name": "@ghasemkiani/io",
+  "version": "2.1.8",
+  "description": "IO utilities",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghasemkiani/io.git"
+  },
+  "keywords": [
+    "io",
+    "file-system"
+  ],
+  "author": "Ghasem Kiani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ghasemkiani/io/issues"
+  },
+  "homepage": "https://github.com/ghasemkiani/io#readme",
+  "dependencies": {
+    "@ghasemkiani/base": "github:ghasemkiani/base"
+  },
+  "devDependencies": {
+    "eslint": "^9.9.1",
+    "prettier": "^3.3.3"
+  }
 }
